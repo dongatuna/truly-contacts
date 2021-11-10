@@ -2,13 +2,13 @@ import React from "react"
 import { Form, Button, Grid, Segment, Header as SemanticHeader } from 'semantic-ui-react'
 import Header from '../../components/Header'
 
-const RegisterUI = ({form: {onChange, form, registerFormValid}}) => {
+const RegisterUI = ({form: {onChange, form, registerFormValid, onSubmit}}) => {
     return (
         <div>
             <Header/>
             <Grid centered>
                 <Grid.Column style={{maxWidth: 550, marginTop: 20}}>
-                    <SemanticHeader> Signup Here
+                    <SemanticHeader> Signup Here </SemanticHeader>
                         <Segment>
                         <Form>
                         <Form.Field>                         
@@ -58,10 +58,10 @@ const RegisterUI = ({form: {onChange, form, registerFormValid}}) => {
                                 placeholder="Enter your password" 
                                 label="Password"  />
                         </Form.Field>
-                        <Button disabled={registerFormValid} fluid primary type="submit">Submit</Button>
+                        <Button onClick={onSubmit} disabled={registerFormValid} fluid primary type="submit">Submit</Button>
                         </Form>
                         </Segment>
-                    </SemanticHeader>
+                    
                 </Grid.Column>
             </Grid>            
         </div>        

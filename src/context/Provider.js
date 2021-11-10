@@ -5,7 +5,7 @@ import contactsInitialState from "./initialstates/contactsInitialState";
 import contacts from "./reducers/contacts";
 
 //application state
-const GlobalContext = createContext({})
+export const GlobalContext = createContext({})
 
 //create provider component - higher order component that takes in children
 //passes above application state to other components
@@ -17,11 +17,12 @@ export const GlobalProvider = ({ children }) => {
     const [contactsState, contactsDispatch] = useReducer(contacts, contactsInitialState )
 
     return(
-        <GlobalContext.Provider value={
+        <GlobalContext.Provider 
+        value={{
             authState, 
             authDispatch,
             contactsState,
             contactsDispatch
-        }>{ children } </GlobalContext.Provider>
+        }}>{ children } </GlobalContext.Provider>
     )
 }
