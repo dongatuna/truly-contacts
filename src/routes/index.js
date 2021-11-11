@@ -7,26 +7,30 @@ const routes = [
     {
         path: '/auth/register',
         component: RegisterComponent,
-        title: "Register"
+        title: "Register",
+        needsAuth: false
     },
 
     {
         path: '/auth/login',
         component: LoginComponent,
-        title: "Login"
+        title: "Login",
+        needsAuth: false
     },
 
     {
         path: '/',
         component: ContactsComponent,
-        title: "Contacts"
+        title: "Contacts",
+        needsAuth: true
     },
 
     {
         path: '/contacts/create',
         component: CreateContactComponent,
-        title: "Create Contact"
-    },
+        title: "Create Contact",
+        needsAuth: true
+    }
 
 ]
 

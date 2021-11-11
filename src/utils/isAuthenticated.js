@@ -1,0 +1,1 @@
+export default () => !!localStorage.token //returns true if local storage is present, otherwise it returns false
